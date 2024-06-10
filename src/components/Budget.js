@@ -10,8 +10,17 @@ const Budget = () => {
   }, 0);
   const handleBudgetChange = (event) => {
     if (event.target.value < totalExpenses) {
+      alert(
+        "The value cannot be less than spent money, i.e., " +
+          currency +
+          totalExpenses
+      );
       setNewBudget(totalExpenses);
       dispatch({ type: "SET_BUDGET", payload: totalExpenses });
+    } else if (event.target.value > 20000) {
+      alert("The value cannot exceed funds of " + currency + 20000);
+      setNewBudget(20000);
+      dispatch({ type: "SET_BUDGET", payload: 20000 });
     } else {
       setNewBudget(event.target.value);
       dispatch({ type: "SET_BUDGET", payload: event.target.value });

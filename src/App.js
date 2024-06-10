@@ -1,14 +1,18 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import "./App.css";
+
 import { AppProvider } from "./context/AppContext";
 import Budget from "./components/Budget";
 import ExpenseTotal from "./components/ExpenseTotal";
 import ExpenseList from "./components/ExpenseList";
 import AllocationForm from "./components/AllocationForm";
 import RemainingBudget from "./components/Remaining";
+import DropdownComponent from "./components/DropdownComponent";
 
 const App = () => {
+  const currencyOptions = ["$ Dollar", "£ Pound", "€ Euro", "₹ Ruppee"];
   return (
     <AppProvider>
       <div className="container">
@@ -22,6 +26,9 @@ const App = () => {
           </div>
           <div className="col-sm">
             <ExpenseTotal />
+          </div>
+          <div className="col-sm">
+            <DropdownComponent optionsList={currencyOptions} />
           </div>
         </div>
         <h3 className="mt-3">Allocation</h3>

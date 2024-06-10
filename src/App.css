@@ -28,6 +28,79 @@
   color: #61dafb;
 }
 
+.circular-btn {
+  width: fit-content;
+  font-size: xx-large;
+  color: white;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown {
+  max-width: 13em;
+  position: relative;
+  width: 100%;
+}
+.dropdown-btn {
+  background: rgb(127, 222, 127);
+  font-size: 18px;
+  width: 100%;
+  border: none;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7em 0.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+.arrow {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #fff;
+  transition: transform ease-in-out 0.3s;
+}
+.dropdown-content {
+  list-style: none;
+  position: absolute;
+  top: 3.2em;
+  width: 86%;
+  visibility: hidden;
+  background-color: rgb(127, 222, 127);
+  border: 1px solid gray;
+  border-radius: 8px;
+  margin-top: 0.2rem;
+  padding: 0.4rem 0;
+}
+.dropdown-content li {
+  color: black;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+.dropdown-content li:hover {
+  background: white;
+}
+.dropdown-content li a {
+  display: block;
+  padding: 0.7em 0.5em;
+  color: #fff;
+  margin: 0.1em 0;
+  text-decoration: none;
+}
+
+.dropdown-btn:focus + .dropdown-content,
+.dropdown-content:hover {
+  visibility: visible;
+}
+.dropdown-btn:focus > .arrow {
+  transform: rotate(180deg);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
